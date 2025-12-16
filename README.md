@@ -1,104 +1,217 @@
-Eat Explorer
+# 🍽️ Eat Explorer
+### Intelligent Food Recommendation System
 
-A food discovery assistant that intelligently recommends restaurants based on user preferences. This project combines natural language processing, rule‑based scoring, and offline review analysis to generate context‑aware recommendations.
+---
+**Table of Contents**
+* [Project Overview](#-project-overview)
+* [NLP and Recommendation Strategy](#-nlp--recommendation-strategy)
+* [Tech Stack](#%EF%B8%8F-tech-stack)
+* [Setup and Installation](#-setup--installation)
 
-Features
-Natural language understanding using Gemini‑based NLP extraction
+---
 
-Attribute detection including cuisine, dish, mood, budget, distance, and preferences
 
-Multi‑stage scoring pipeline for restaurant relevance and ranking
+## 📘 Project Overview
 
-Review‑boosting module for improved ranking using customer feedback
+**Eat Explorer** is an AI-powered food discovery assistant that recommends the best restaurants based on natural, conversational user queries.
 
-Clear and conversational explanation of recommendations
+It understands phrases like:
 
-“Surprise Me” mode for random intelligent suggestions
+> *“something spicy under 200 near me”*
 
-Works fully offline with a custom curated dataset of local restaurants
+and converts them into structured attributes using NLP. These attributes pass through a **multi-stage scoring pipeline** and a **review-enhanced reranking system** to generate accurate, meaningful, and human-friendly recommendations.
 
-System Architecture
-NLP Module
-Interprets user queries in natural language
+The system operates **fully offline** using a curated dataset and includes:
 
-Extracts structured attributes such as cuisine, dish, dietary preferences, mood, and budget
+- NLP parsing  
+- Scoring logic  
+- Review intelligence  
+- Conversational response generation  
 
-Infers cuisine from dish (e.g., dosa → South Indian)
+---
 
-Handles fallback logic when the dish or cuisine is not explicitly available
+## 🔍 NLP & Recommendation Strategy
 
-Detects veg‑only preferences and constraints
+Eat Explorer uses a **hybrid intelligence pipeline** combining NLP, scoring, and review-based reranking.
+![User Request](https://github.com/user-attachments/assets/332621b0-7daa-47ab-9f38-07a2c711c4a6)
 
-Scoring and Ranking Module
-Scores restaurants based on how well they match the extracted attributes
+---
 
-Incorporates distance, cuisine relevance, dish relevance, budget fit, and popularity
+## 🧠 1. NLP Attribute Extraction
 
-Applies weighted scoring to ensure balanced recommendations
+Gemini NLP extracts structured attributes from user queries:
 
-Performs rule‑based filtering where needed
+- Cuisine  
+- Dish  
+- Mood  
+- Budget  
+- Distance  
+- Food style  
+- Additional constraints  
 
-Produces a ranked list from best match to lowest match
+This converts free-form text into **machine-processable attributes**.
 
-Review Boost Module
-Analyzes customer reviews to improve ranking accuracy
+---
 
-Computes a relevance score between user intent and review content
+## 📊 2. Scoring Pipeline
 
-Highlights short, meaningful review summaries
+Each restaurant receives a **baseline score** based on:
 
-Rewards restaurants with strong positive sentiment
+- Cuisine match  
+- Dish relevance  
+- Budget compatibility  
+- Distance proximity  
+- Popularity score  
+- Food style alignment  
 
-Ensures explanations include context from real customer experiences
+This determines the **initial ranking**.
 
-Response Formatter Module
-Converts backend results into clear, human‑friendly explanations
+---
 
-Generates global reasoning based on user preferences
+## 📝 3. Review Intelligence Module
 
-Outputs only reasoning text (without leaking restaurant details as required)
+Enhances ranking quality using **offline review analysis**:
 
-Provides structured message formatting for frontend display
+- Semantic similarity between query & reviews  
+- Token overlap scoring   
+- Short highlight extraction  
 
-Ensures consistency across all recommendation types
+Restaurants with strong **review alignment** receive a ranking boost.
 
-Dataset
-Custom curated dataset collected from multiple sources
+---
 
-Includes restaurant name, cuisine, cost, location, reviews, popularity, and food style
+## 🏆 4. Final Reranking
 
-Converted into a unified JSON format for efficient offline use
+The system blends:
 
-Installation
-git clone https://github.com/Vishwathulasi/Eat_Explorer.git
-cd Eat_Explorer
-Backend and frontend installation steps can be added here depending on your structure.
+- Base score  
+- Review-match score  
 
-Usage
-Run the backend server to enable NLP processing and recommendation generation
+**Result:** context-aware, user-aligned restaurant recommendations.
 
-Use the frontend interface to input queries such as:
+---
 
-“I want something spicy and cheap”
+## 📈 Analysis & Output Features
 
-“Suggest good comfort food nearby”
+The system provides:
 
-“Show me cheesy dishes under 150 rupees”
+- Global reasoning explaining recommendation logic  
+- Clean, conversational responses (no internal data leakage)  
+- Structured restaurant list (`recommendations[]`)  
+- Positive review highlights  
+- **Surprise-Me Mode** for intelligent random suggestions  
 
-The system returns ranked recommendations with clear reasoning
+---
 
-Project Structure:
+## 🛠️ Tech Stack
 
-├── Backend  
-│   ├── app  
-│   │   ├── services  
-│   │   ├── data  
-│   │   ├── routes  
-│   │   └── models  
-│   └── main.py  
-│
-├── Frontend  
-│   ├── src  
-│   └── public  
-│
-└── README.md
+### Backend
+- Flask  
+- Gemini API (NLP extraction)  
+- Custom Scoring Engine  
+- Review Boost Engine  
+- Pandas (CSV processing)    
+
+### Frontend
+- React  
+- React Router  
+- Axios  
+- Vite  
+
+---
+
+## 📦 Setup & Installation
+
+### Prerequisites
+- Python 3.9+  
+- Node.js 16+  
+- Gemini API Key  
+
+---
+
+## 💾 Clone the Repository
+
+```bash
+🔙 Backend Setup
+Create Virtual Environment
+python -m venv venv
+
+Activate Environment
+
+Windows
+
+venv\Scripts\activate
+
+
+Mac / Linux
+
+source venv/bin/activate
+
+Install Dependencies
+pip install -r requirements.txt
+
+Environment Variables
+
+Create a .env file:
+
+GEMINI_API_KEY=your_api_key_here
+
+Start Backend
+python -m app.main
+
+
+Backend URL:
+
+http://localhost:8000
+
+🖥️ Frontend Setup
+Go to Frontend
+cd frontend
+
+Install Packages
+npm install
+
+Start Frontend
+npm run dev
+
+
+Frontend URL:
+
+http://localhost:5173
+
+🚀 How to Use Eat Explorer
+1. Enter Your Query
+
+Examples:
+
+spicy biryani under 200 near me
+
+light cheesy food for dinner
+
+comfort food after a long day
+
+NLP extracts all attributes automatically.
+
+2. Receive Recommendations
+
+You get:
+
+Ranked restaurant list
+
+Reasoning message
+
+Positive review highlights
+
+Full metadata inside recommendations[]
+
+3. Surprise Me Mode
+
+Generates an intelligent random suggestion based on:
+
+Popularity
+
+Review positivity
+
+Cuisine variety
+git clone https://github.com/Vishwathulasi/Eat_Explorer_AI.git
+cd Eat_Explorer_AI
