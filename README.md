@@ -1,5 +1,5 @@
 # 🍽️ Eat Explorer
-### Intelligent Food Recommendation System
+### Intelligent Food Discovery AI Assistant
 
 ---
 **Table of Contents**
