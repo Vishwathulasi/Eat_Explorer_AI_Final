@@ -213,5 +213,5 @@ Popularity
 Review positivity
 
 Cuisine variety
-git clone https://github.com/Vishwathulasi/Eat_Explorer_AI.git
-cd Eat_Explorer_AI
+git clone https://github.com/Vishwathulasi/Eat_Explorer_AI_Final.git
+cd Eat_Explorer_AI_Final
