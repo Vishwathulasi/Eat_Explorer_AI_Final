@@ -1,0 +1,19 @@
+.message-box {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.message-box p {
+  margin: 0 0 8px;
+}
+
+.message-box p:last-child {
+  margin-bottom: 0;
+}

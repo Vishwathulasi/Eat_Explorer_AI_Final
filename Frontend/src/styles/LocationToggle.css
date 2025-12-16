@@ -1,0 +1,9 @@
+.location-toggle {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.location-toggle input {
+  transform: scale(1.2);
+  margin-right: 8px;
+}

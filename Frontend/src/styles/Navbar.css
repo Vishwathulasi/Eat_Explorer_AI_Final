@@ -1,0 +1,102 @@
+.navbar {
+  width: 100%;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  padding: 6px 20px;               
+  
+  display: flex;
+  justify-content: flex-start;   
+  align-items: center;
+  gap: 10px;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.nav-logo-img {
+  width: 34px;     
+  height: 34px;
+  object-fit: contain;
+  margin-right: 6px;
+}
+
+.nav-logo {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 32px;              
+  font-weight: 700;
+  color: #ea7052;                 
+  letter-spacing: 0.5px;
+  margin-top: 2px;                
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;              
+}
+
+.nav-location-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: 0.2s ease;
+}
+
+.nav-location-btn:hover {
+  background: #f2f2f2;
+}
+
+.nav-login-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.nav-login-btn:hover {
+  background: var(--accent-dark);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 6px 15px;            
+  }
+
+  .nav-logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-logo {
+    font-size: 26px;              
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .nav-location-btn,
+  .nav-login-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}

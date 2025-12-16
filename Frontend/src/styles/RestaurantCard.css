@@ -1,0 +1,92 @@
+.restaurant-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+  margin-bottom: 16px;
+  transition: 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-2px);
+}
+
+.restaurant-card-content {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.card-main {
+  flex: 1.1;
+}
+
+.card-reason {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-light);
+  border-left: 1px solid #eee;
+  padding-left: 12px;
+}
+
+.restaurant-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 6px;
+  color: #666;
+  font-size: 14px;
+}
+
+.address {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.reason {
+  color: #444;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .restaurant-card-content {
+    flex-direction: column;
+  }
+
+  .card-reason {
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    padding-top: 8px;
+  }
+}
+.route-btn {
+  padding: 10px 18px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 2px 6px rgba(255, 107, 0, 0.3);
+}
+
+.route-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 107, 0, 0.4);
+}
+
+.route-btn:active {
+  transform: scale(0.97);
+}
+
